@@ -42,7 +42,7 @@ A list is returned with:
 \describe{
 \item{\code{AnnotatedOutput}}{Annotated outout that will be printed to the console if quiet==FALSE.}
 \item{\code{eqMI.stat}}{Test statistics, degrees of freedom, p-values, ncp, T-sizes, RMSEAs, their cutoff values, and the goodness-of-fit under equivalence testing. A formated version of \code{eqMI.stat} will be printed if \code{quiet=FALSE}.}
-\item{\code{convention.sem}}{Resulst of conventional multiple-group SEM using Lavaan. Returned object of \code{\link{eqMI.semtest}}.}
+\item{\code{convention.sem}}{Results of conventional multiple-group SEM using Lavaan. Returned object of \code{\link{eqMI.semtest}}.}
 \item{\code{projection.res}}{Results of projection methods on tests of latent means. Returned object of \code{\link{eqMI.projection}} and \code{\link{eqMI.bootstrap}}.}
 }
 }
