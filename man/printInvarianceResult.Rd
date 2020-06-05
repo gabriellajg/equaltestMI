@@ -19,5 +19,5 @@ printInvarianceResult(FIT, fit.measures, method, quiet = FALSE)
 Internal function to format the results of measurement invariance tests
 }
 \author{
-The maintainer, Ge Jiang, adapted the original source code written by Yves Rosseel et al. for the \pkg{lavaan} and \pkg{semTools} packages (permission obtained).
+The maintainer, Ge Jiang, adapted the original source code of printInvarianceResult() in the \pkg{lavaan} and \pkg{semTools} packages written by Yves Rosseel, Sunthud Pornprasertmanit, and Terrence D. Jorgensen (permission obtained).
 }

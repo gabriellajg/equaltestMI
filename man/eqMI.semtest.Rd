@@ -53,5 +53,5 @@ semTools Contributors. (2016). semTools: Useful tools for structural equation mo
 \code{\link[lavaan]{sem}}, \code{\link[semTools]{measurementInvariance}}
 }
 \author{
-The maintainer, Ge Jiang, adapted the original source code written by Yves Rosseel et al. for the \pkg{lavaan} and \pkg{semTools} packages (permission obtained).
+The maintainer, Ge Jiang, adapted the original source code of measurementInvariance() in the \pkg{lavaan} and \pkg{semTools} packages written by Yves Rosseel, Sunthud Pornprasertmanit, and Terrence D. Jorgensen (permission obtained).
 }
