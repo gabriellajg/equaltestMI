@@ -54,9 +54,9 @@ eqMI.ncp <- function(T, df, N, m, alpha = 0.05){
   epsilon_t <- delta/(N-m)
   RMSEA_t <- sqrt(m*epsilon_t/df)
 
-  #cat("noncentrality parameter ncp = ", delta, "\n")
-  #cat("minimum tolerable size = ", epsilon_t, "\n")
-  #cat("RMSEA_t under equivalence testing = ", RMSEA_t, "\n")
+  #message("noncentrality parameter ncp = ", delta, "\n")
+  #message("minimum tolerable size = ", epsilon_t, "\n")
+  #message("RMSEA_t under equivalence testing = ", RMSEA_t, "\n")
 
   return(list(epsilon_t = epsilon_t, RMSEA_t = RMSEA_t))
 }

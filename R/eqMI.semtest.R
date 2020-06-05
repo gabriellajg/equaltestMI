@@ -21,7 +21,7 @@
 #' @references Yuan, K. H., & Chan, W. (2016). Measurement invariance via multigroup SEM: Issues and solutions with chi-square-difference tests. Psychological methods, 21(3), 405-426.
 #' @references Yves Rosseel (2012). lavaan: An R Package for Structural Equation Modeling. Journal of Statistical Software, 48(2), 1-36.
 #' @references semTools Contributors. (2016). semTools: Useful tools for structural equation modeling. R package version 0.4-14. Retrieved from https://CRAN.R-project.org/package=semTools
-#' @author The maintainer, Ge Jiang, adapted the original source code written by Yves Rosseel et al. for the \pkg{lavaan} and \pkg{semTools} packages (permission obtained).
+#' @author The maintainer, Ge Jiang, adapted the original source code of measurementInvariance() in the \pkg{lavaan} and \pkg{semTools} packages written by Yves Rosseel, Sunthud Pornprasertmanit, and Terrence D. Jorgensen (permission obtained).
 #' @importFrom lavaan sem
 #' @importFrom lavaan partable
 #' @importFrom lavaan anova
@@ -127,16 +127,16 @@ eqMI.semtest <- function(..., output = 'both', quiet = FALSE) {
   Mean.part <- Cov.part <- NULL
   fit.measures <- "default"; method <- "satorra.bentler.2001"
   if(output == 'covariance'){
-    if(!quiet) {cat('\n', '------------------ Covariance Structure ------------------ ', '\n')}
+    if(!quiet) {message('\n', '------------------ Covariance Structure ------------------ ', '\n')}
     Cov.part <- printInvarianceResult(res[1:6], fit.measures, method, quiet)
   } else if(output == 'mean'){
-    if(!quiet) {cat('\n', '------------------ Mean Structure ------------------ ', '\n')}
+    if(!quiet) {message('\n', '------------------ Mean Structure ------------------ ', '\n')}
     Mean.part <- printInvarianceResult(res[-c(5:6)], fit.measures, method, quiet)
   } else if(output == 'both'){
-    if(!quiet) {cat('\n', '------------------ Covariance Structure ------------------ ', '\n')}
+    if(!quiet) {message('\n', '------------------ Covariance Structure ------------------ ', '\n')}
     Cov.part <- printInvarianceResult(res[1:6], fit.measures, method, quiet)
-    if(!quiet) {cat('\n', '------------------ Mean Structure ------------------ ', '\n')}
-    #cat('NOTE: the chisquare difference test of <fit.strict.residuals> and <fit.strong.means> is not meaningful because they are not nested.', '\n')
+    if(!quiet) {message('\n', '------------------ Mean Structure ------------------ ', '\n')}
+    #message('NOTE: the chisquare difference test of <fit.strict.residuals> and <fit.strong.means> is not meaningful because they are not nested.', '\n')
     Mean.part <- printInvarianceResult(res[-c(1:2, 5:6)], fit.measures, method, quiet)
   }
 

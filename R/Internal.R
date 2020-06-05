@@ -4,7 +4,7 @@
 #' @param fit.measures a vector of names of fit indices, passed to \code{lavaan:fitMeasures}.
 #' @param method a vector of method names for calculating robust test statistic(s). See \code{lavaan:lavTestLRT}.
 #' @param quiet If \code{quiet=FALSE} (default), a summary is printed out containing an overview of the different models that are fitted, together with some model comparison tests and fit measures. The results of equivalence testing will also be printed if equivalence testing is used. If \code{quiet=TRUE}, no summary is printed but results will be stored in the object.
-#' @author The maintainer, Ge Jiang, adapted the original source code written by Yves Rosseel et al. for the \pkg{lavaan} and \pkg{semTools} packages (permission obtained).
+#' @author The maintainer, Ge Jiang, adapted the original source code of printInvarianceResult() in the \pkg{lavaan} and \pkg{semTools} packages written by Yves Rosseel, Sunthud Pornprasertmanit, and Terrence D. Jorgensen (permission obtained).
 
 
 printInvarianceResult <- function(FIT, fit.measures, method, quiet = FALSE) {
@@ -64,22 +64,22 @@ printInvarianceResult <- function(FIT, fit.measures, method, quiet = FALSE) {
   }
 
   if(!quiet){
-    cat("\n")
-    cat("Measurement invariance models \n\n")
-    cat(paste(paste("Model", seq_along(FIT), ":", NAMES), collapse = "\n"))
-    cat("\n\n")
+    message("\n")
+    message("Measurement invariance models \n\n")
+    message(paste(paste("Model", seq_along(FIT), ":", NAMES), collapse = "\n"))
+    message("\n\n")
 
     print(TABLE)
   }
 
   if(length(fit.measures)) {
     if(!quiet){
-      cat("\n", "Fit measures \n\n")
+      message("\n", "Fit measures \n\n")
       pFM <- FM.TABLE
       pFM[] <- sprintf("%8.3f",unlist(FM.TABLE))
       pFM[is.na(FM.TABLE)] <- ''
       print(pFM)
-      cat("\n")
+      message("\n")
     }
     return(data.frame(TABLE, FM.TABLE))
   } else {

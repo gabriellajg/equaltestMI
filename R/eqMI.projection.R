@@ -190,7 +190,7 @@ eqMI.bootstrap <- function(..., B = 100, seed = 111) {
   if (length(sample.nobs)!=2) {
     stop("projection method only applies to two groups with this function")}
 
-  cat('bootstrap resampling...', '\n')
+  message('bootstrap resampling...', '\n')
 
   proj.res <- do.call(eqMI.projection, dotdotdot)
   fit.metric <- proj.res$fit.metric
@@ -228,7 +228,7 @@ eqMI.bootstrap <- function(..., B = 100, seed = 111) {
     proj_b <- do.call(eqMI.projection, c(dotdotdot))
     stat_b[b, ] <- proj_b$chi.stat[2:3,1]
   }
-  cat('\n')
+  message('\n')
   stat.st <- apply(stat_b, 2, sort)
   pval1 <- 1 - findInterval(proj.res$chi.stat[2,1], stat.st[,1])/B
   pval2 <- 1 - findInterval(proj.res$chi.stat[3,1], stat.st[,2])/B

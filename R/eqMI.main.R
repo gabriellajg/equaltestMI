@@ -119,7 +119,7 @@ eqMI.main <- function(..., output = 'both', equivalence.test = TRUE, adjRMSEA = 
   names(AnnotatedOutput)[length(AnnotatedOutput)] <- 'Equality of Population Covariance Matrices under NHT'
   #  names(AnnotatedOutput)[length(AnnotatedOutput)] <- 'NHT_TestOfEqualPopCov'
   if(!quiet) {
-    cat('\n', '---------- Equality of Population Covariance Matrices under NHT ---------- ', '\n\n')
+    message('\n', '---------- Equality of Population Covariance Matrices under NHT ---------- ', '\n\n')
     print(fit.pop.cov)
   }
 
@@ -161,8 +161,8 @@ eqMI.main <- function(..., output = 'both', equivalence.test = TRUE, adjRMSEA = 
   df1[match('fit.combine.groups', rownames(df1)), 3:6] <- ''
 
   if(!quiet){
-    cat("\n", '-------- Chi-Square and Chi-Square-Difference Test under NHT  --------', '\n\n')
-    #cat("Chi Square and Chi Square Difference Test \n\n")
+    message("\n", '-------- Chi-Square and Chi-Square-Difference Test under NHT  --------', '\n\n')
+    #message("Chi Square and Chi Square Difference Test \n\n")
     print(df1)
   }
   AnnotatedOutput <- append(AnnotatedOutput, list(df1))
@@ -205,29 +205,29 @@ eqMI.main <- function(..., output = 'both', equivalence.test = TRUE, adjRMSEA = 
     if ( adjRMSEA == TRUE ){
       names(AnnotatedOutput)[length(AnnotatedOutput)] <- 'T-size epsilon, RMSEA, and Adjusted Cutoff Values under ET'
       if(!quiet){
-        cat("\n", '-------- T-size epsilon, RMSEA, and Adjusted Cutoff Values under ET --------', '\n\n')
+        message("\n", '-------- T-size epsilon, RMSEA, and Adjusted Cutoff Values under ET --------', '\n\n')
         print(df2)
-        cat("\n")
+        message("\n")
       }
     } else {
       names(AnnotatedOutput)[length(AnnotatedOutput)] <- 'T-size epsilon, RMSEA, and Conventional Cutoff Values under ET'
       if(!quiet){
-        cat("\n", '-------- T-size epsilon, RMSEA, and Conventional Cutoff Values under ET --------', '\n\n')
+        message("\n", '-------- T-size epsilon, RMSEA, and Conventional Cutoff Values under ET --------', '\n\n')
         print(df2)
-        cat("\n")
+        message("\n")
       }
     }
   }
 
   # print the results of projection methods on latent means here if applicable
   if(!is.null(projection.res) & !quiet){
-    cat('\n', '---------- Means of Latent and Specific Factors by the Projection Method and under NHT ----------', '\n\n')
+    message('\n', '---------- Means of Latent and Specific Factors by the Projection Method and under NHT ----------', '\n\n')
     if( stat.feed["fit.metric.diff","pvalue"]<=0.05 | stat.feed["fit.metric.diff","goodness-of-fit"]=='poor'){
       warning("Metric invariance must be established before the use of projection method for testing equality of latent means ")
-      cat('\n')
+      message('\n')
     }
     print(projection.res$chi.stat)
-    cat('Validity Index is', projection.res$V.index, '\n')
+    message('Validity Index is ', round(projection.res$V.index, 5), '\n')
   }
   AnnotatedOutput <- append(AnnotatedOutput, list(projection.res$chi.stat))
   names(AnnotatedOutput)[length(AnnotatedOutput)] <- 'Projection Method: Means of Latent and Specific Factors'
@@ -249,10 +249,10 @@ eqMI.main <- function(..., output = 'both', equivalence.test = TRUE, adjRMSEA = 
   }
 
   if(!quiet){
-    #cat("Projection Method Test \n\n")
-    cat('\n', '---------- Means of Latent and Specific Factors by the Projection Method and under ET ----------', '\n\n')
+    #message("Projection Method Test \n\n")
+    message('\n', '---------- Means of Latent and Specific Factors by the Projection Method and under ET ----------', '\n\n')
     print(df3)
-    cat("\n")
+    message("\n")
   }
 
   return(list(AnnotatedOutput = AnnotatedOutput, eqMI.stat = stat.feed, convention.sem = convention.sem, projection.res = projection.res))
