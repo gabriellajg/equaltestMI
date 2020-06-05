@@ -5,6 +5,7 @@
 #' @param method a vector of method names for calculating robust test statistic(s). See \code{lavaan:lavTestLRT}.
 #' @param quiet If \code{quiet=FALSE} (default), a summary is printed out containing an overview of the different models that are fitted, together with some model comparison tests and fit measures. The results of equivalence testing will also be printed if equivalence testing is used. If \code{quiet=TRUE}, no summary is printed but results will be stored in the object.
 #' @author The maintainer, Ge Jiang, adapted the original source code of printInvarianceResult() in the \pkg{lavaan} and \pkg{semTools} packages written by Yves Rosseel, Sunthud Pornprasertmanit, and Terrence D. Jorgensen (permission obtained).
+#' @noRd
 
 
 printInvarianceResult <- function(FIT, fit.measures, method, quiet = FALSE) {

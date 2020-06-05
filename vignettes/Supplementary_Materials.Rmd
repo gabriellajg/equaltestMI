@@ -46,24 +46,66 @@ library(equaltestMI)
 ```
 
 
-## Part 1: R Script for Obtaining Results from Equivalence Testing and Projection Method
+## Part 1: Sample Means and Covariance Matrices of the Example Data
 
-
+Load data first:
 
 ```{r}
-## sample statistics where M1 and M2 are sample means
-## Cov1 and Cov2 are sample covariance matrices;
+data(LeeAlOtaiba)
+# contains sample covariance matrices and sample means of four groups
+```
+
+We will use two of the groups as illustration:
+
+```{r}
 ## group 1 = boys ineligible for free-reduced lunches
-## group 2 = boys eligible for free-reduced lunches
-Group1 <- read.table('Group1.txt', header = TRUE)
-Group2 <- read.table('Group2.txt', header = TRUE)
+Group1 <- LeeAlOtaiba$BoysIneligible
 Group1 <- as.matrix(Group1)
+
+## group 2 = boys eligible for free-reduced lunches
+Group2 <- LeeAlOtaiba$BoysEligible
 Group2 <- as.matrix(Group2)
+
+# sample means:
 M1 <- Group1[1,]
 M2 <- Group2[1,]
+
+# sample covariance matrices:
 Cov1 <- Group1[2:7,]
 Cov2 <- Group2[2:7,]
 ```
+
+#### Sample statistics for boys ineligible for free-reduced lunches (Group 1):
+
+Sample means: 
+
+```{r, echo=FALSE}
+M1
+```
+
+Sample Covariance Matrix:
+
+```{r, echo=FALSE}
+round(Cov1, 3)
+```
+
+
+#### Sample statistics for boys eligible for free-reduced lunches (Group 2):
+
+Sample means: 
+
+```{r, echo=FALSE}
+M2
+```
+
+Sample Covariance Matrix:
+
+```{r, echo=FALSE}
+round(Cov2, 3)
+```
+
+
+## Part 2: R Script for Obtaining Results from Equivalence Testing and Projection Method
 
 
 ```{r}
@@ -80,7 +122,6 @@ Spelling =~ Real_Words + Pseudo_Words
 ```{r, eval=FALSE}
 ## the results using equivalence testing and projection method
 ## full R output will be presented in Part 3
-
 test <- eqMI.main(model = model, 
 	sample.nobs = c(78, 174), 
 	sample.mean = list(M1, M2), 
@@ -94,41 +135,7 @@ test <- eqMI.main(model = model,
 
 
 
-## Part 2: Sample Means and Covariance Matrices of the Example Data
-
-### Sample statistics for boys ineligible for free-reduced lunches (group 1):
-
-Sample means: 
-
-```{r, echo=FALSE}
-M1
-```
-
-Sample Covariance Matrix:
-
-```{r, echo=FALSE}
-round(Cov1, 3)
-```
-
-
-
-### Sample statistics for boys eligible for free-reduced lunches (group 2):
-
-Sample means: 
-
-```{r, echo=FALSE}
-M2
-```
-
-Sample Covariance Matrix:
-
-```{r, echo=FALSE}
-round(Cov2, 3)
-```
-
-
-
-## Part 3: Full R Output of the “test” object in Part 1
+## Part 3: Full R Output of the “test” object in Part 2
 
 ```{r, echo=FALSE}
 ## the results using equivalence testing and projection method
