@@ -1,4 +1,5 @@
 # equaltestMI
+
 This package includes a number of functions for users to examine measurement invariance via equivalence testing along with adjusted RMSEA cutoff values. In particular, a projection-based method is implemented to test the equality of latent factor means across groups without assuming the equality of intercepts.
 
 Users can install the package from CRAN:
