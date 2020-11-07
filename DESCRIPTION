@@ -16,4 +16,4 @@ Depends: R (>= 3.1.0), lavaan, stats, utils
 Suggests: knitr,rmarkdown,MASS,semTools,printr
 BugReports: https://github.com/gabriellajg/equaltestMI/issues
 VignetteBuilder: knitr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
