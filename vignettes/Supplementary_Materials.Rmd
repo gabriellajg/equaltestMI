@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
-This supplementary document illustrates the use of the accompanying R package equaltestMI. The sample statistics from Table 1 of Lee and Al Otaiba (2015) are used as an example. The description of the data can be found in the original article and the results obtained from equaltestMI are discussed at length in the published article “Advances in Measurement Invariance and Mean Comparison of Latent Variables: Equivalence Testing and A Projection-Based Approach” <DOI: 10.3389/fpsyg.2017.01823>.
+This supplementary document illustrates the use of the accompanying R package equaltestMI. The sample statistics from Table 1 of Lee and Al Otaiba (2015) are used as an example. The description of the data can be found in the original article and the results obtained from equaltestMI are discussed at length in the published article “Advances in Measurement Invariance and Mean Comparison of Latent Variables: Equivalence Testing and A Projection-Based Approach” <doi: 10.3389/fpsyg.2017.01823>.
 
 The R package equaltestMI is available on CRAN and can be downloaded for use on any R platform with version higher than 3.1.0. Users can pass different arguments to the main function eqMI.main() to examine measurement invariance using the conventional multiple-group approach (NHT) or equivalence testing (ET) approach. Under the framework of equivalence testing, users obtain the minimum tolerable size (T-size) and adjusted cutoff values to evaluate the goodness-of-fit of each invariance test. The projection method is also available for testing the equality of latent means.
 
