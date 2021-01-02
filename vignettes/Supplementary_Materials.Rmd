@@ -1,6 +1,9 @@
 ---
 title: "Measurement Invariance via Equivalence Testing and Projection Method"
 author: "Ge Jiang, Yujiao Mai, and Ke-Hai Yuan"
+output: 
+  #pdf_document
+  html_document 
 vignette: >
   %\VignetteIndexEntry{Supplementary_Materials}
   %\VignetteEngine{knitr::rmarkdown}
